@@ -4,7 +4,7 @@ import OptionElement from "../option-element/OptionElement";
 
 import classes from './Dropdown.module.css'
 
-function Dropdown ({filteredOptions, selected, setSelected, term, setTerm, isActive, setIsActive}) {
+function Dropdown ({filteredOptions, selected, setSelected, term, setTerm, isActive, setIsActive, showFlags}) {
 
 	return (
 		<div className={classes.dropdown}>
@@ -15,7 +15,7 @@ function Dropdown ({filteredOptions, selected, setSelected, term, setTerm, isAct
 				<div className={classes.content}>
 					<SearchField term={term} setTerm={setTerm}/>
 					{filteredOptions.map(option => (
-						<OptionElement key={option.id} option={option} selected={selected} setSelected={setSelected}/>
+						<OptionElement key={option.id} option={option} selected={selected} setSelected={setSelected} showFlags={showFlags}/>
 					))}
 				</div>
 			)}

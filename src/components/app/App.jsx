@@ -36,6 +36,8 @@ function App() {
 				setTerm={setTerm}
 				isActive={isActive}
 				setIsActive={setIsActive}
+				showFlags={true}
+				multiselect={false}
 				/>
     </div>
   );

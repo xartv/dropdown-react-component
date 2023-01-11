@@ -1,6 +1,6 @@
 import classes from './OptionElement.module.css';
 
-const OptionElement = ({option, selected, setSelected}) => {
+const OptionElement = ({option, selected, setSelected, showFlags}) => {
 
 	const onClickHandler = () => {
 		if(selected === option.title) {
@@ -17,7 +17,7 @@ const OptionElement = ({option, selected, setSelected}) => {
 			onClick={onClickHandler}
 			>
 				<div className={classes.wrapper}>
-					<img src={option.img} alt='language'/>
+					{showFlags ? <img src={option.img} alt='language'/> : null}
 					<div className={classes.title}>
 						{option.title}
 					</div>
