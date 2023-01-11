@@ -1,13 +1,26 @@
 import classes from './OptionElement.module.css';
 
-const OptionElement = ({option, selected, setSelected, showFlags}) => {
+const OptionElement = ({option, selected, setSelected, showFlags, multiselect}) => {
 
 	const onClickHandler = () => {
-		if(selected === option.title) {
-			setSelected('');
+		if(multiselect) {
+			if(selected.includes(option.title)) {
+				setSelected(selected.filter(item => item !== option.title));
+			} else {
+				const newSelected = [...selected];
+
+				newSelected.push(option.title);
+
+				setSelected(newSelected);
+			}
 		} else {
-			setSelected(option.title);
+			if(selected === option.title) {
+				setSelected('');
+			} else {
+				setSelected(option.title);
+			}
 		}
+		
 	}
 
 	return (
@@ -23,7 +36,7 @@ const OptionElement = ({option, selected, setSelected, showFlags}) => {
 					</div>
 					
 				</div>
-				{option.title === selected ? <img src="./svg/checked.svg" alt="checkbox"/> : <div className={classes.checkbox}></div>}
+				{selected.includes(option.title) ? <img src="./svg/checked.svg" alt="checkbox"/> : <div className={classes.checkbox}></div>}
 				
 		</div>
 	)

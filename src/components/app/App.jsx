@@ -5,7 +5,7 @@ import Dropdown from '../dropdown/Dropdown';
 import './App.css';
 
 function App() {
-	const [selected, setSelected] = useState('');
+	const [selected, setSelected] = useState([]);
 	const [term, setTerm] = useState('');
 	const [isActive, setIsActive] = useState(false);
 	const [options, setOptions] = useState([
@@ -37,7 +37,7 @@ function App() {
 				isActive={isActive}
 				setIsActive={setIsActive}
 				showFlags={true}
-				multiselect={false}
+				multiselect={true}
 				/>
     </div>
   );
