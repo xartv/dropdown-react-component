@@ -1,39 +1,29 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 
-function Dropdown ({options, selected, setSelected}) {
-	const [isActive, setIsActive] = useState(false);
+function Dropdown ({filteredOptions, selected, setSelected, term, setTerm, isActive, setIsActive}) {
 	const btnRef = useRef();
 	const contentRef = useRef();
 
 	const chevronStyle = isActive ? 'chevron opened' : 'chevron';
 
-	useEffect(() => {
-		window.addEventListener('click', onActiveFalse);
-
-		return () => {
-			window.removeEventListener('click', onActiveFalse);
-		} 
-	}, [])
-
-	const onActiveToggle = () => {
-		setIsActive(!isActive)
-	}
-
-	const onActiveFalse = (e) => {
-		if(e.target !== btnRef.current && e.target !== contentRef.current) {
-			console.log(e.target.classList)
-			setIsActive(false);
+	const onActiveToggle = (e) => {
+		if (e.target.classList.contains('closeBtn')) {
+			setSelected('');
+			return;
 		}
+
+		setIsActive(!isActive);
 	}
 
 	const selectedContent = selected ? <div className="selected">
-																				{selected}
-																				<img src="./svg/close.svg" alt="close" />
+																				<span>{selected}</span>
+																					<img className="closeBtn" src="./svg/close.svg" alt="close" />
 																		 </div> 
 																		 : null;
 
 	return (
 		<div className="dropdown">
+			{isActive && <div onClick={onActiveToggle} className="cover"></div>}
 			<div className="label">Язык</div>
 			<div ref={btnRef} className="btn" onClick={onActiveToggle}>
 					{selectedContent}
@@ -44,20 +34,32 @@ function Dropdown ({options, selected, setSelected}) {
 			</div>
 			{isActive && (
 				<div ref={contentRef} className="content">
-					{options.map(option => (
+					<div className="searchField">
+						<img src="./svg/search.svg" alt="search"/>
+						<input type="text" placeholder="Поиск" value={term} onChange={(e) => setTerm(e.target.value)}/>
+					</div>
+					{filteredOptions.map(option => (
 						<div
-							key={option.id} 
+							key={option.id}
+							id={option.id} 
 							className="item"
-							onClick={() => {
-								setSelected(option.title);
-								setIsActive(false);
+							onClick={(e) => {
+								if(selected === option.title) {
+									setSelected('');
+								} else {
+									setSelected(option.title);
+								}
 							}}
 							>
 								<div className="wrapper">
 									<img src={option.img} alt='language'/>
-									{option.title}
+									<div className="title">
+										{option.title}
+									</div>
+									
 								</div>
-								<div className="checkbox"></div>
+								{option.title === selected ? <img src="./svg/checked.svg" alt="checkbox"/> : <div className="checkbox"></div>}
+								
 						</div>
 					))}
 				</div>
