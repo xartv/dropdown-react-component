@@ -2,20 +2,11 @@ import { useState, useRef, useEffect } from "react";
 
 function Dropdown ({options, selected, setSelected}) {
 	const [isActive, setIsActive] = useState(false);
-	
 	const btnRef = useRef();
 	const contentRef = useRef();
 
-	const onActiveToggle = () => {
-		setIsActive(!isActive)
-	}
+	const chevronStyle = isActive ? 'chevron opened' : 'chevron';
 
-	const onActiveFalse = (e) => {
-		if(e.target !== btnRef.current && e.target !== contentRef.current) {
-			setIsActive(false);
-		}
-	}
-	
 	useEffect(() => {
 		window.addEventListener('click', onActiveFalse);
 
@@ -24,17 +15,32 @@ function Dropdown ({options, selected, setSelected}) {
 		} 
 	}, [])
 
-	
+	const onActiveToggle = () => {
+		setIsActive(!isActive)
+	}
+
+	const onActiveFalse = (e) => {
+		if(e.target !== btnRef.current && e.target !== contentRef.current) {
+			console.log(e.target.classList)
+			setIsActive(false);
+		}
+	}
+
+	const selectedContent = selected ? <div className="selected">
+																				{selected}
+																				<img src="./svg/close.svg" alt="close" />
+																		 </div> 
+																		 : null;
 
 	return (
 		<div className="dropdown">
 			<div className="label">Язык</div>
 			<div ref={btnRef} className="btn" onClick={onActiveToggle}>
-				{selected}
-				<div class="arrow">
-					<span class="arrow-left"></span>
-					<span class="arrow-right"></span>
+					{selectedContent}
+				<div className={chevronStyle}>
+					<img src="./svg/chevron.svg" alt="chevron" />
 				</div>
+			
 			</div>
 			{isActive && (
 				<div ref={contentRef} className="content">
@@ -48,7 +54,7 @@ function Dropdown ({options, selected, setSelected}) {
 							}}
 							>
 								<div className="wrapper">
-									<img src={option.img} alt='language'></img>
+									<img src={option.img} alt='language'/>
 									{option.title}
 								</div>
 								<div className="checkbox"></div>
