@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Dropdown from './Dropdown';
+import Dropdown from '../dropdown/Dropdown';
 
 import './App.css';
 
@@ -16,7 +16,7 @@ function App() {
 		{id: 5, title: 'Итальянский', img: './svg/italy.svg', isSelected: false},
 		{id: 6, title: 'Польский', img: './svg/pol.svg', isSelected: false},
 	]);
-	
+
 	const searchLang = (items, term) => {
 		if (term.length === 0) return items;
 

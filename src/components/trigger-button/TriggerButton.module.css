@@ -1,0 +1,40 @@
+.btn {
+	padding: 7px;
+	min-height: 40px;
+	background: #fff;
+	border: 1px solid #C1C1C1;
+	border-radius: 10px;
+	font-weight: 500;
+	color: #333;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+.closeBtn {
+	display: block;
+}
+.chevron {
+	position: absolute;
+	right: 10px;
+	top: 11px;
+}
+.selected {
+	background: #F4F4F4;
+	border-radius: 8px;
+	height: 24px;
+	padding: 6px 12px;
+	display: flex;
+	align-items: center;
+}
+.selected span {
+	font-size: 12px;
+	line-height: 10px;
+}
+.selected img {
+	margin-left: 10px;
+}
+.opened {
+	transform: rotate(180deg);
+	top: 6px;
+}
