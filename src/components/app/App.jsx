@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import Dropdown from '../dropdown/Dropdown';
-
 import './App.css';
 
 function App() {
+	// all data is here and drilled down in <Dropdown/>
 	const [selected, setSelected] = useState([]);
 	const [term, setTerm] = useState('');
 	const [isActive, setIsActive] = useState(false);
@@ -17,16 +17,16 @@ function App() {
 		{id: 6, title: 'Польский', img: './svg/pol.svg', isSelected: false},
 	]);
 
+	// searching and filtering data
 	const searchLang = (items, term) => {
 		if (term.length === 0) return items;
-
-		
 
 		return items.filter(item => item.title.toLowerCase().includes(term.toLowerCase()));
 	}
 
 	const filteredOptions = searchLang(options, term);
 
+	// showFlags and multiselect - custom props 
   return (
     <div className="App">
       <Dropdown 
@@ -39,7 +39,7 @@ function App() {
 				isActive={isActive}
 				setIsActive={setIsActive}
 				showFlags={true}
-				multiselect={true}
+				multiselect={false}
 				/>
     </div>
   );

@@ -21,13 +21,13 @@
 	top: 13px;
 }
 .selected {
-	background: #F4F4F4;
-	border-radius: 8px;
 	height: 24px;
 	padding: 6px 12px;
+	margin: 2px;
+	background: #F4F4F4;
+	border-radius: 8px;
 	display: flex;
 	align-items: center;
-	margin: 2px;
 }
 .selected span {
 	font-size: 12px;
