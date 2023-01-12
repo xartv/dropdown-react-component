@@ -26,10 +26,13 @@
 	padding: 16px 0 0 0;
 	margin-top: 8px;
 	background: #fff;
-	box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
 	font-weight: 500;
 	color: #333;
 	width: 100%;
 	box-shadow: 0px 4px 6px rgba(51, 51, 51, 0.15);
 	border-radius: 12px;
+}
+.notMatches {
+	width: 160px;
+	margin: 0 auto 10px auto;
 }

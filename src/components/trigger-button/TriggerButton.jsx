@@ -1,6 +1,6 @@
 import classes from './TriggerButton.module.css';
 
-const TriggerButton = ({selected, setSelected, isActive, setIsActive, multiselect}) => {
+const TriggerButton = ({selected, setSelected, isActive, multiselect, toggleActive}) => {
 	const chevronStyle = isActive ? `${classes.opened} ${classes.chevron}` : classes.chevron;
 	let selectedContent;
 	if (multiselect) { 
@@ -32,7 +32,7 @@ const TriggerButton = ({selected, setSelected, isActive, setIsActive, multiselec
 			}
 		}
 		
-		setIsActive(!isActive);
+		toggleActive();
 }
 
 	return (
