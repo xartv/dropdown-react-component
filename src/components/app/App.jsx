@@ -39,7 +39,7 @@ function App() {
 				isActive={isActive}
 				setIsActive={setIsActive}
 				showFlags={true}
-				multiselect={true}
+				multiselect={false}
 				/>
     </div>
   );
