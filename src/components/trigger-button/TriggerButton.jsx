@@ -5,11 +5,11 @@ const TriggerButton = ({selected, setSelected, isActive, setIsActive, multiselec
 	let selectedContent;
 	if (multiselect) { 
 		selectedContent = (selected.length > 0) ? selected.map(item => (
-																										<div key={item} className={classes.selected}>
-																											<span>{item}</span>
-																											<img className={classes.closeBtn} src="./svg/close.svg" alt="close" />
-																										</div>
-																									)) : <div className={classes.placeholder}>Выберите язык</div>;
+																																<div key={item} className={classes.selected}>
+																																	<span>{item}</span>
+																																	<img className={classes.closeBtn} src="./svg/close.svg" alt="close" />
+																																</div>
+																															)) : <div className={classes.placeholder}>Выберите язык</div>;
 	} else {
 		selectedContent = selected ? (
 																<div className={classes.selected}>
