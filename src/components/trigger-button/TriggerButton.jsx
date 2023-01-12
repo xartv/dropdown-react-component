@@ -14,11 +14,11 @@ const TriggerButton = ({selected, setSelected, isActive, multiselect, toggleActi
 																																		)) : <div className={classes.placeholder}>Выберите язык</div>;
 	} else {
 		selectedContent = typeof selected === 'string' && selected ? (
-																		<div className={classes.selected}>
-																			<span>{selected}</span>
-																			<img className={classes.closeBtn} src="./svg/close.svg" alt="close" />
-																		</div>
-																	)	: <div className={classes.placeholder}>Выберите язык</div>;
+																																		<div className={classes.selected}>
+																																			<span>{selected}</span>
+																																			<img className={classes.closeBtn} src="./svg/close.svg" alt="close" />
+																																		</div>
+																																	)	: <div className={classes.placeholder}>Выберите язык</div>;
 	}
 
 	const onActiveToggle = (e) => {
