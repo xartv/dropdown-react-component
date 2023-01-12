@@ -1,7 +1,7 @@
 # Custom dropdown React component
 Simple dropdown component for React with usage of CSS modules. It is possible to customize the display of options icons and the multiselect mode.
 
-You can view a live demo over at https://xartv.github.io/dropdown-react-component/ 
+You can view a live demo (multiselect mode ON) over at https://xartv.github.io/dropdown-react-component/ 
 
 ![dropdown.gif](./public/dropdown.gif)
 
