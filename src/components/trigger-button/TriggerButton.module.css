@@ -1,47 +1,47 @@
 .btn {
-	padding: 7px;
-	min-height: 44px;
-	background: #fff;
-	border: 1px solid #C1C1C1;
-	border-radius: 10px;
-	font-weight: 500;
-	color: #333;
-	display: flex;
-	flex-wrap: wrap;
-	justify-items: flex-start;
-	align-items: center;
-	position: relative;
+  padding: 7px;
+  min-height: 44px;
+  background: #fff;
+  border: 1px solid #C1C1C1;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: flex-start;
+  align-items: center;
+  position: relative;
 }
 .closeBtn {
-	display: block;
+  display: block;
 }
 .chevron {
-	position: absolute;
-	right: 10px;
-	top: 13px;
+  position: absolute;
+  right: 10px;
+  top: 13px;
 }
 .selected {
-	height: 24px;
-	padding: 6px 12px;
-	margin: 2px;
-	background: #F4F4F4;
-	border-radius: 8px;
-	display: flex;
-	align-items: center;
+  height: 24px;
+  padding: 6px 12px;
+  margin: 2px;
+  background: #F4F4F4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
 }
 .selected span {
-	font-size: 12px;
-	line-height: 10px;
+  font-size: 12px;
+  line-height: 10px;
 }
 .selected img {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 .opened {
-	transform: rotate(180deg);
-	top: 8px;
+  transform: rotate(180deg);
+  top: 8px;
 }
 .placeholder {
-	margin-left: 8px;
-	font-weight: 400;
-	color: #C1C1C1;
+  margin-left: 8px;
+  font-weight: 400;
+  color: #C1C1C1;
 }
