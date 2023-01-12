@@ -1,7 +1,7 @@
 .searchField {
   width: 368px;
   height: 40px;
-  background: #F4F4F4;
+  background: #f4f4f4;
   border-radius: 10px;
   margin: 0 auto 10px auto;
   display: flex;
@@ -10,7 +10,7 @@
 .searchField input {
   width: 100%;
   height: 100%;
-  background: #F4F4F4;
+  background: #f4f4f4;
   border: none;
   border-radius: 10px;
   font-weight: 400;

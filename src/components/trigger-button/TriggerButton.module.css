@@ -2,7 +2,7 @@
   padding: 7px;
   min-height: 44px;
   background: #fff;
-  border: 1px solid #C1C1C1;
+  border: 1px solid #c1c1c1;
   border-radius: 10px;
   font-weight: 500;
   color: #333;
@@ -24,7 +24,7 @@
   height: 24px;
   padding: 6px 12px;
   margin: 2px;
-  background: #F4F4F4;
+  background: #f4f4f4;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -43,5 +43,5 @@
 .placeholder {
   margin-left: 8px;
   font-weight: 400;
-  color: #C1C1C1;
+  color: #c1c1c1;
 }
