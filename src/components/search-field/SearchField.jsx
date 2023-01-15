@@ -1,6 +1,8 @@
+import React from "react";
+
 import classes from "./SearchField.module.css";
 
-const SearchField = ({ term, setTerm }) => {
+const SearchField = React.memo(({ term, setTerm }) => {
   return (
     <div className={classes.searchField}>
       <img src="./svg/search.svg" alt="search" />
@@ -12,6 +14,6 @@ const SearchField = ({ term, setTerm }) => {
       />
     </div>
   );
-};
+});
 
 export default SearchField;

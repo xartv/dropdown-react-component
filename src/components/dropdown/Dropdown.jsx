@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import TriggerButton from "../trigger-button/TriggerButton";
 import SearchField from "../search-field/SearchField";
 import OptionElement from "../option-element/OptionElement";
@@ -15,10 +16,11 @@ function Dropdown({
   showFlags,
   multiselect,
 }) {
-  const toggleActive = () => {
+
+  const toggleActive = useCallback(() => {
     setIsActive(!isActive);
     setTerm("");
-  };
+  }, [setIsActive, setTerm, isActive]);
 
   return (
     <div className={classes.dropdown}>

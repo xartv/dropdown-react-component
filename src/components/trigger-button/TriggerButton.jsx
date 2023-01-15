@@ -1,6 +1,7 @@
+import React from "react";
 import classes from "./TriggerButton.module.css";
 
-const TriggerButton = ({
+const TriggerButton = React.memo(({
   selected,
   setSelected,
   isActive,
@@ -69,6 +70,6 @@ const TriggerButton = ({
       </div>
     </div>
   );
-};
+})
 
 export default TriggerButton;
