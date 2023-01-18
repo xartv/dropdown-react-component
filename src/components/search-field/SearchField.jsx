@@ -1,9 +1,15 @@
+import { useContext } from "react";
+
+import { dataContext } from "../app/App";
+
 import classes from "./SearchField.module.css";
 
-const SearchField = ({ term, setTerm }) => {
-  const onChangeHandler = (e) => {
-    setTerm(e.target.value)
-  }
+const SearchField = () => {
+  const { term, setTerm } = useContext(dataContext);
+
+  const onChangeHandler = e => {
+    setTerm(e.target.value);
+  };
 
   return (
     <div className={classes.searchField}>

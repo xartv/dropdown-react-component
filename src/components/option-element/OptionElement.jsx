@@ -1,13 +1,13 @@
+import { useContext } from "react";
+
+import { dataContext } from "../app/App";
+
 import classes from "./OptionElement.module.css";
 
-const OptionElement = ({
-  option,
-  setIsActive,
-  selected,
-  setSelected,
-  showFlags,
-  multiselect,
-}) => {
+const OptionElement = ({ option }) => {
+  const { setIsActive, selected, setSelected, showFlags, multiselect } =
+    useContext(dataContext);
+
   let checkbox;
 
   // customize checkbox display

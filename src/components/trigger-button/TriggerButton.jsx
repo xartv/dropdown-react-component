@@ -1,12 +1,13 @@
+import { useContext } from "react";
+
+import { dataContext } from "../app/App";
+
 import classes from "./TriggerButton.module.css";
 
-const TriggerButton = ({
-  selected,
-  setSelected,
-  isActive,
-  multiselect,
-  toggleActive,
-}) => {
+const TriggerButton = () => {
+  const { selected, setSelected, isActive, toggleActive, multiselect } =
+    useContext(dataContext);
+
   const chevronStyle = isActive
     ? `${classes.opened} ${classes.chevron}`
     : classes.chevron; // toggle chevron up-down
