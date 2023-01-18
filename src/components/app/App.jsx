@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 import Dropdown from "../dropdown/Dropdown";
 import "./App.css";
@@ -18,15 +18,13 @@ function App() {
   ]);
 
   // searching and filtering data
-  const searchLang = (items, term) => {
-    if (term.length === 0) return items;
+  const filteredOptions = useMemo(() => {
+    if (term.length === 0) return options;
 
-    return items.filter(item =>
+    return options.filter(item =>
       item.title.toLowerCase().includes(term.toLowerCase())
     );
-  };
-
-  const filteredOptions = searchLang(options, term);
+  }, [options, term]);
 
   // showFlags and multiselect - custom props
   return (
